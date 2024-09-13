@@ -1,0 +1,139 @@
+// DetailPage.jsx
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
+
+const productDetails = {
+    agriculture: {
+        title: 'Agriculture Products',
+        image: 'https://source.unsplash.com/random?agriculture',
+        description: 'Explore the finest agriculture products sourced directly from farms.',
+        benefits: [
+            'Sustainable farming practices',
+            'Fresh and organic produce',
+            'Support local farmers'
+        ]
+    },
+    organic: {
+        title: 'Organic Products',
+        image: 'https://source.unsplash.com/random?organic',
+        description: 'Discover a range of organic products that are good for you and the environment.',
+        benefits: [
+            'No pesticides or chemicals',
+            'Nutrient-rich and healthy',
+            'Eco-friendly packaging'
+        ]
+    },
+    vegetables: {
+        title: 'Fresh Vegetables',
+        image: 'https://source.unsplash.com/random?vegetables',
+        description: 'Get the freshest vegetables delivered to your door.',
+        benefits: [
+            'Picked at peak freshness',
+            'Wide variety of vegetables',
+            'Rich in vitamins and minerals'
+        ]
+    },
+    dairy: {
+        title: 'Dairy Products',
+        image: 'https://source.unsplash.com/random?dairy',
+        description: 'Enjoy high-quality dairy products made from the best ingredients.',
+        benefits: [
+            'Rich in calcium and protein',
+            'Fresh and creamy taste',
+            'From local dairies'
+        ]
+    }
+};
+
+const DetailPage = () => {
+    const { productType } = useParams();
+    const product = productDetails[productType] || {};
+
+    return (
+        <div className="p-4 md:p-8 w-[70%] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* Categories */}
+        <div className="col-span-1">
+          <div className="bg-white p-4 shadow-lg rounded-lg">
+            <h2 className="text-xl font-bold mb-4">Categories</h2>
+            <ul className="space-y-2">
+              <li className="text-gray-700">Agriculture Products</li>
+              <li className="text-gray-700">Organic Products</li>
+              <li className="text-gray-700">Fresh Vegetables</li>
+              <li className="text-gray-700">Dairy Products</li>
+              <li className="text-gray-700">Harvest</li>
+            </ul>
+          </div>
+
+          {/* Need Help Section */}
+          <div className="bg-green-400 text-white p-4 mt-6 shadow-lg rounded-lg">
+            <h3 className="text-lg font-bold">Need Help?</h3>
+            <p className="text-sm mt-2">
+              Speak with a human to fill out a form! Call corporate office and we will connect you with a team member now.
+            </p>
+            <p className="text-xl font-bold mt-4">+12 (000) 7-9180</p>
+            <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg">
+              Start Shopping Now
+            </button>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="col-span-3">
+          {/* Featured Image */}
+          <div className="bg-gray-200 rounded-lg overflow-hidden">
+            <img
+              src="https://via.placeholder.com/800x400" // Replace with an actual image URL
+              alt="Agriculture"
+              className="w-full h-60 object-cover"
+            />
+          </div>
+
+          {/* Main Title */}
+          <h1 className="text-3xl font-bold mt-6">Agriculture Products</h1>
+          <p className="text-gray-700 mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vulputate ultricies nisl.
+          </p>
+
+          {/* Benefits Section */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <img
+              src="https://via.placeholder.com/400x200" // Replace with an actual image URL
+              alt="Benefit 1"
+              className="w-full h-40 object-cover rounded-lg"
+            />
+            <img
+              src="https://via.placeholder.com/400x200" // Replace with an actual image URL
+              alt="Benefit 2"
+              className="w-full h-40 object-cover rounded-lg"
+            />
+          </div>
+
+          <h2 className="text-2xl font-bold mt-6">Our Benefits</h2>
+          <p className="text-gray-700 mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam sollicitudin metus, eget aliquam mauris.
+          </p>
+
+          {/* Links Section */}
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
+              <p className="text-lg font-bold">World's hottest destinations for vegans</p>
+              <span className="text-yellow-500 text-xl">&#9654;</span>
+            </div>
+            <div className="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
+              <p className="text-lg font-bold">Let's grow naturally and live naturally</p>
+              <span className="text-yellow-500 text-xl">&#9654;</span>
+            </div>
+            <div className="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
+              <p className="text-lg font-bold">Best vegetables for your healthy hair</p>
+              <span className="text-yellow-500 text-xl">&#9654;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    );
+};
+
+export default DetailPage;
