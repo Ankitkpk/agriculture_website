@@ -61,3 +61,21 @@ body{
     background-repeat: no-repeat;
 }
 
+
+.nav
+{   
+    display: flex;
+    align-items: center;
+    gap:160px;
+    justify-content:space-evenly;
+    padding:20px;
+   
+
+}
+
+.project
+{
+    background-image:url('../assets/project.png');
+    background:cover;
+    object-fit: contain;
+}
